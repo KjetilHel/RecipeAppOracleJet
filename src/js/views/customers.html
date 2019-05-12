@@ -1,0 +1,15 @@
+<!--
+ Copyright (c) 2014, 2019, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<div class="oj-hybrid-padding">
+  <oj-button id="homeButton" chroming="full" on-oj-action="[[homepage]]">Back to homepage</oj-button>
+
+  <oj-list-view id="dateList" data="{{dataProvider}}" current-item="{{selectedDate}}" on-current-item-changed="[[editDate]]">
+    <template slot="itemTemplate">
+      <span>
+        <oj-bind-text value='[[$current.data.item]]'></oj-bind-text>
+      </span>
+    </template>
+  </oj-list-view>
+</div>

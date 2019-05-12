@@ -1,0 +1,31 @@
+<!--
+ Copyright (c) 2014, 2019, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+ <div class="oj-hybrid-applayout-page">
+   <div class="ojet-applayout-content">
+     <div role="main" class="oj-hybrid-applayout-content">
+       <oj-label for="recipeName">Name of recipe</oj-label>
+       <oj-input-text id="recipeName" value="{{recipeName}}"></oj-input-text>
+
+       <h1>Ingredients</h1>
+       <oj-list-view id="ingredientList" data="{{dataProvider}}">
+         <template slot="itemTemplate">
+           <span>
+             <oj-bind-text value='[[$current.data.item]]'></oj-bind-text>
+           </span>
+           <span>
+             <oj-button id="deleteButton" style="display: inline-block;" on-oj-action='[[deleteButton]]' data-bind="attr: {id: 'delete' + [[$current.data.id]]}">X</oj-button>
+           </span>
+         </template>
+       </oj-list-view>
+
+       <oj-input-text id="inputItem" value="{{newItem}}" placeholder="Enter new ingredient here"></oj-input-text>
+       <oj-button id="addButton" on-oj-action="[[addItem]]">Add</oj-button>
+
+     </div>
+     <oj-button id="saveButton" chroming="full" on-oj-action="[[saveList]]">Save</oj-button>
+     <oj-button id="cancelButton" chroming="full" on-oj-action="[[noSaveList]]">Cancel</oj-button>
+     <oj-button id="deleteButton" chroming="full" on-oj-action="[[deleteList]]">Delete Recipe</oj-button>
+   </div>
+ </div>

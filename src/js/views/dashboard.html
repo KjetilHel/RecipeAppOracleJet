@@ -1,0 +1,20 @@
+<!--
+ Copyright (c) 2014, 2019, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<div class="oj-hybrid-applayout-page">
+  <div class="ojet-applayout-content">
+    <div role="main" class="oj-hybrid-applayout-content">
+      <oj-button id="diaryButton" chroming="full" on-oj-action="[[diaryButton]]">Check Diary</oj-button><br>
+      <oj-button id="recipeButton" chroming="full" on-oj-action="[[recipeButton]]">Make New Recipe</oj-button>
+
+      <oj-list-view id="recipeList" data="{{dataProvider}}" current-item="{{selectedRecipe}}" on-current-item-changed="[[editRecipe]]">
+        <template slot="itemTemplate">
+          <span>
+            <oj-bind-text value='[[$current.data.item]]'></oj-bind-text>
+          </span>
+        </template>
+      </oj-list-view>
+    </div>
+  </div>
+</div>

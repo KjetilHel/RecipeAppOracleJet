@@ -1,0 +1,18 @@
+<!--
+ Copyright (c) 2014, 2019, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<div class="oj-hybrid-padding">
+  <h1 id="dateTitle"></h1>
+  <div>
+    <oj-label for="diaryEntry">Comment about your day</oj-label>
+    <oj-text-area id="diaryEntry" value="{{diaryEntry}}"></oj-text-area>
+    <br>
+    <oj-label for="recipeList">Select the recipe you made</oj-label>
+    <oj-combobox-one id="recipeList" options="{{recipeProvider}}" value="{{selectedRecipe}}">
+    </oj-combobox-one>
+  </div>
+  <br>
+  <oj-button id="saveButton" chroming="full" on-oj-action="[[save]]">Save</oj-button>
+  <oj-button id="diaryButton" chroming="full" on-oj-action="[[diary]]">Back to diary</oj-button>
+</div>
